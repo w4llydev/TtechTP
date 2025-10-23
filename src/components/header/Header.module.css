@@ -1,0 +1,13 @@
+.header {
+  background-color: rgb(168, 167, 247);
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 10px 40px;
+  border-bottom: 1px solid #eee;
+}
+
+.navbarContainer {
+  flex-basis: 60%; 
+  text-align: center;
+}

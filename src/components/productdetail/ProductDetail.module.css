@@ -1,0 +1,129 @@
+/* Contenedor principal de productos */
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(1200px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px; /* Aumenté el max-width para mejor acomodo */
+  margin: 0 auto;
+}
+
+/* Card individual del producto - LAYOUT HORIZONTAL */
+.productsCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid #eaeaea;
+  display: flex; /* Cambiado a flex para layout horizontal */
+  gap: 1.5rem; /* Espacio entre imagen y contenido */
+  height: fit-content;
+}
+
+.productsCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(109, 103, 103, 0.15);
+}
+
+/* Imagen del producto - LADO IZQUIERDO */
+.productsImage {
+  width: 180px; /* Ancho fijo para la imagen */
+  height: 180px; /* Alto fijo para la imagen */
+  object-fit: contain;
+  background: #f8f9fa;
+  border-radius: 8px;
+  flex-shrink: 0; /* No se encoge */
+}
+
+/* Contenedor de información - LADO DERECHO */
+.productsInfo {
+  flex: 1; /* Ocupa el espacio restante */
+  display: flex;
+  flex-direction: column;
+  margin-top: 0; /* Eliminamos el margin-top anterior */
+}
+
+.productsCategory {
+  color: #666;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.8rem;
+}
+
+.productsTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+/* Descripción del producto - NUEVA CLASE */
+.productsDescription {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1; /* Ocupa espacio disponible */
+}
+
+.PriceCurrent {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c5aa0;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+/* Botones de acción */
+.productActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .productsGrid {
+    grid-template-columns: 1fr; /* Una columna en móviles */
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .productsCard {
+    flex-direction: column; /* Volver a vertical en móviles */
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .productsImage {
+    width: 100%; /* Imagen ocupa todo el ancho en móviles */
+    height: 200px;
+  }
+  
+  .productsTitle {
+    height: auto; /* Altura automática en móviles */
+    min-height: auto;
+    max-height: none;
+  }
+  
+}
+
+/* Para tablets */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .productsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+  
+  .productsImage {
+    width: 150px;
+    height: 150px;
+  }
+}

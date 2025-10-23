@@ -1,0 +1,187 @@
+/* Contenedor principal de productos */
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card individual del producto */
+.productsCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  height: fit-content; /* Ajusta a contenido pero mantiene consistencia */
+}
+
+.productsCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(109, 103, 103, 0.15);
+}
+
+/* Badge de "Visto recientemente" */
+.badgeReciente {
+  position: absolute;
+  top: -8px;
+  left: 1rem;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
+}
+
+/* Imagen del producto */
+.productsImage{
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  /*padding: 1rem;*/
+  flex-shrink: 0; /* No se encoge */
+}
+
+/* Información del producto */
+.productsInfo {
+  margin-top: 1rem;
+}
+
+.productsCategory {
+  color: #666;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.productsTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  
+  /* ALTURA FIJA PARA 3 LÍNEAS */
+  height: 4.2em; /* 1.4 line-height * 3 líneas = 4.2em */
+  min-height: 4.2em;
+  max-height: 4.2em;
+  
+  /* Control de texto overflow */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  
+  /* Flex para ocupar el espacio fijo */
+  flex: 0 0 auto; /* No grow, no shrink, tamaño automático */
+}
+
+/* Precios */
+.productsPrice {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c5aa0;
+  margin-bottom: 1rem;
+  flex-shrink: 0; /* Precio fijo */
+}
+
+.priceOriginal {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.PriceCurrent {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c5aa0;
+  margin-bottom: 0.5rem;
+}
+
+.Discount {
+  background: #ff4444;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Envío */
+.freeShipping {
+  color: #00a650;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.freeShipping::before {
+  content: "🚚";
+  font-size: 1rem;
+}
+
+/* Botones de acción */
+.productActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: auto; /* ¡IMPORTANTE! Empuja los botones hacia abajo */
+  flex-shrink: 0; /* Botones fijos */
+}
+
+.btnCart {
+  background: #3483fa;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btnCart:hover {
+  background: #2968c8;
+}
+
+.btnFavorite {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnFavorite:hover {
+  background: #e9ecef;
+  border-color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .productsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .productCard {
+    padding: 1rem;
+  }
+}
